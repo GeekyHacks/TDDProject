@@ -1,8 +1,8 @@
 class Solver
-  def factorial(n)
-    if n.is_a?(Integer) && n >= 0
+  def factorial(anynum)
+    if anynum.is_a?(Integer) && anynum >= 0
       result = 1
-      (1..n).each do |num|
+      (1..anynum).each do |num|
         result *= num
       end
       result
