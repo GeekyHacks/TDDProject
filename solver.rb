@@ -23,11 +23,11 @@ class Solver
 
   def fizzbuzz(num)
     if num.is_a?(Integer)
-      if num % 3 == 0 && num % 5 == 0
+      if (num % 3).zero? && (num % 5).zero?
         'fizzbuzz'
-      elsif num % 3 == 0
+      elsif (num % 3).zero?
         'fizz'
-      elsif num % 5 == 0
+      elsif (num % 5).zero?
         'buzz'
       else
         num.to_s
@@ -39,8 +39,6 @@ class Solver
     end
   end
 end
-
-
 solver = Solver.new
 puts solver.factorial(5)
 puts solver.factorial(0)

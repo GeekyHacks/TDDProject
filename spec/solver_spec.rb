@@ -63,21 +63,4 @@ describe Solver do
       expect(solver.fizzbuzz(22)).to eq('22')
     end
   end
-  def fizzbuzz(num)
-    if num.is_a?(Integer)
-      if num % 3 == 0 && num % 5 == 0
-        'fizzbuzz'
-      elsif num % 3 == 0
-        'fizz'
-      elsif num % 5 == 0
-        'buzz'
-      else
-        num.to_s
-      end
-
-    else
-      puts 'Invalid input. Please provide a integer '
-
-    end
-  end
 end
