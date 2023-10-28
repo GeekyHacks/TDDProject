@@ -38,4 +38,46 @@ describe Solver do
       expect(solver.reverse(word)).to eql(expected_output)
     end
   end
+  describe '#fizzbuzz' do
+    it 'returns "fizz" when N is divisible by 3' do
+      expect(solver.fizzbuzz(3)).to eq('fizz')
+      expect(solver.fizzbuzz(6)).to eq('fizz')
+      expect(solver.fizzbuzz(9)).to eq('fizz')
+    end
+
+    it 'returns "buzz" when N is divisible by 5' do
+      expect(solver.fizzbuzz(5)).to eq('buzz')
+      expect(solver.fizzbuzz(10)).to eq('buzz')
+      expect(solver.fizzbuzz(20)).to eq('buzz')
+    end
+
+    it 'returns "fizzbuzz" when N is divisible by 3 and 5' do
+      expect(solver.fizzbuzz(15)).to eq('fizzbuzz')
+      expect(solver.fizzbuzz(30)).to eq('fizzbuzz')
+      expect(solver.fizzbuzz(45)).to eq('fizzbuzz')
+    end
+
+    it 'returns N as a string for any other case' do
+      expect(solver.fizzbuzz(7)).to eq('7')
+      expect(solver.fizzbuzz(13)).to eq('13')
+      expect(solver.fizzbuzz(22)).to eq('22')
+    end
+  end
+  def fizzbuzz(num)
+    if num.is_a?(Integer)
+      if num % 3 == 0 && num % 5 == 0
+        'fizzbuzz'
+      elsif num % 3 == 0
+        'fizz'
+      elsif num % 5 == 0
+        'buzz'
+      else
+        num.to_s
+      end
+
+    else
+      puts 'Invalid input. Please provide a integer '
+
+    end
+  end
 end
